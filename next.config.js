@@ -1,11 +1,13 @@
 //https://github.com/zeit/next.js/issues/3131
 
-const path = require('path');
-const glob = require('glob');
-const webpack = require('webpack');
+const path = require('path')
+const glob = require('glob')
+const { parsed: localEnv } = require('dotenv').config()
+const webpack = require('webpack')
 
 module.exports = {
 	webpack: (config, { dev }) => {
+		config.plugins.push(new webpack.EnvironmentPlugin(localEnv)),
 		config.module.rules.push(
 			{
 				test: /\.(css|scss)/,
@@ -32,7 +34,7 @@ module.exports = {
 					}
 				]
 			}
-		);
+		)
 
 		return config
 	}
