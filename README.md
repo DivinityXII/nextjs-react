@@ -7,7 +7,7 @@ kickstart nextjs 7.0.2
 Step 1 - Clone repo
 
 ```bash
-git clone https://github.com/benzintel/nextjs-react
+git clone https://github.com/DivinityXII/nextjs-react.git
 ```
 
 Step 2 - Install packet
