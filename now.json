@@ -1,8 +1,1 @@
-{
-    "version": 0.1,
-    "name": "nextjs",
-    "builds": [{
-        "src": "next.config.js",
-        "use": "@now/next"
-    }]
-}
+{}
