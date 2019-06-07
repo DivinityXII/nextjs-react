@@ -1,5 +1,5 @@
-import Document, { Head, Main, NextScript } from 'next/document'
-import flush from 'styled-jsx/server'
+import Document, { Head, Main, NextScript } from 'next/document';
+import flush from 'styled-jsx/server';
 
 export default class MyDocument extends Document {
 
@@ -15,11 +15,11 @@ export default class MyDocument extends Document {
 			<html>
 				<Head>
 					<meta key="description" name="description" content=""/>
-					<meta key="og:url" property="og:url" content=""/>
+					<meta key="og:url" property="og:url" content="" />
 					<meta key="og:type" property="og:type" content="website" />
-					<meta key="og:description" property="og:description" content=""/>
-					<meta key="og:image" property="og:image" content=""/>
-					<link rel="icon" href=""/>
+					<meta key="og:description" property="og:description" content="" />
+					<meta key="og:image" property="og:image" content="" />
+					<link rel="icon" href="" />
 				</Head>
 				<body>
 					<Main />

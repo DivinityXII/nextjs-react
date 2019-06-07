@@ -1,54 +1,67 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React from 'react';
+import { connect } from 'react-redux';
+import { addSometing } from './../actions/AccountActions';
 
-import { initSomeState } from '../redux-actions/SomeAction'
 
 class IndexContainer extends React.Component {
 
 	constructor(props) {
-		super(props)
+		super(props);
+
 		this.state = {
-			loading: false,
-			input: ''
-		}
-		this.handleInputChange = this.handleInputChange.bind(this)
+			loading: false
+		};
 	}
 
 	componentDidMount() {
-
 	}
 
-	async handleInputChange(event) {
-		let value = event.target.value
-		let id = event.target.id
-		this.props.initSomeState(value)
-		await this.setState({
-			[id]: value
-		})
+	changeProps() {
+		// Changes props in store  "C" -> "2"
+		this.props.addSometing(2);
+	}
+
+	// Fetchdata
+	curlData() {
+		fetch("URL", {
+			method: 'POST',
+			body: '',
+			credentials: 'same-origin',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+			}
+		}).then(response => {
+			if (response.status == 200) {
+
+			}
+		}, error => {
+			console.error(error);
+		});
 	}
 
 	render() {
 		return (
-			<>
-				<input type="text" id="input" onChange={this.handleInputChange} value={this.state.input}/>
-				<br/>
-				Index Container : props redux[{this.props.someState}]
-			</>
-		)
+			<div>
+				<button onClick={this.changeProps.bind(this)}>Click</button>
+				{ /* Show data in store */}
+				{this.props.someting}
+			</div>
+		);
 	}
 }
 
 const mapStateToProps = (state) => ({
-    someState: state.SomeReducer.someState,
+	someting: state.AccountReducer.someting
 })
 
 const mapDispatchToProps = (dispatch) => ({
-	initSomeState: value => {
-		dispatch(initSomeState(value))
+	addSometing: value => {
+		dispatch(addSometing(value));
 	},
-}) 
+})
 
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(IndexContainer)
+)(IndexContainer);
