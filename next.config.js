@@ -1,6 +1,6 @@
 const withSass = require('@zeit/next-sass')
 module.exports = withSass({
-    distDir: 'build',
+    targets: 'serverless',
     pageExtensions: ['mdx', 'jsx', 'js'],
     cssModules: true,
     env: {
