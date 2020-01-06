@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { initSomeState } from '../redux-actions/SomeAction'
+import { initSomeState } from '../store/someState/action'
 
 class IndexContainer extends React.Component {
 
@@ -14,7 +14,7 @@ class IndexContainer extends React.Component {
     return (
       <>
         <div className='hero'>
-          <h1 className='title'>Welcome to Next.js DivinityXii Template !</h1>
+          <h1 className='title'>Welcome to Next.js DivinityXII Template !</h1>
           <p className='description'>
             To get started, please read article below and try to understand in this template structure.
           </p>

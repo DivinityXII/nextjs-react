@@ -2,7 +2,7 @@ import React from 'react'
 import App from 'next/app'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import rootReducer from '../redux-reducer/AppReducer'
+import rootReducer from '../store'
 
 const store = createStore(rootReducer)
 
